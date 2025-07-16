@@ -1,0 +1,64 @@
+/* Sidebar layout */
+.side-bar {
+  background-color: #f1f1f1;
+  padding: 1px;
+  width: 200px;
+}
+
+/* Menu section */
+.menu-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Header that opens submenu */
+.menu-header {
+  background-color: #c7e6f1;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Submenu: animated sliding */
+.submenu {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 5px;
+}
+
+/* When open, show submenu with animation */
+.menu-wrapper.open .submenu {
+  max-height: 300px; /* or something big enough */
+  opacity: 1;
+}
+
+/* Submenu buttons */
+.submenu button {
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  font-size: 14px;
+  text-align: left;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.submenu button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Highlight active submenu */
+.active-submenu-button {
+  background-color: lightgray !important;
+  font-weight: bold;
+  color: #000;
+}

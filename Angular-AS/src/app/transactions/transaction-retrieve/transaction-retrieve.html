@@ -1,0 +1,14 @@
+<form (ngSubmit) = "OnSubmit()" #actionForm = "ngForm" class = "form-container">
+    <div class = "form-row">
+        <label for = "TranDate">Date of Transaction: </label>
+        <input type = "date"  id = "TranDate" name = "TranDate" [(ngModel)] = "tran.TranDate">
+    </div>
+
+    <div class = "form-row">
+        <input type="submit" value="Retrieve">
+    </div>
+</form>
+
+<div *ngIf = "messageType == 'error'" class = "notification success"[@slideInOut]>
+    {{message}}
+</div>

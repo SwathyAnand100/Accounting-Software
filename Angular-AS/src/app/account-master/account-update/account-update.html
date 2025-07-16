@@ -1,0 +1,29 @@
+<form (ngSubmit) = "OnSubmit()" #actionForm = "ngForm" class = "form-container">
+    <div class = "form-row">
+        <label for = "AccName"> Account Name : </label>
+        <input type = "text" id = "AccName" name = "AccName" [(ngModel)] = "Accnt.AccName" autocomplete="off" list = "accountList"><br><br>
+        <datalist id = "accountList">
+            <option *ngFor = "let acc of accountList">{{acc}}</option>
+        </datalist>
+    </div>
+    <div class = "form-row">
+        <label for = "AccDesc"> Account Description : </label>
+        <input type = "text" id = "AccDesc" name = "AccDesc" [(ngModel)] = "Accnt.AccDesc" autocomplete="off"><br><br>
+    </div>
+
+    <div class = "form-row">
+        <label for = "CategoryType"> Category Type : </label>
+        <select id = "CategoryType" name = "CategoryType" [(ngModel)] = "Accnt.CategoryType">
+            <option value = "0">Asset</option>
+            <option value = "1">Liability</option>
+        </select><br><br>
+    </div>
+
+    <div class = "form-row">
+        <input type="submit" value="Update">
+    </div>
+</form>
+
+<div *ngIf = "messageType == 'success'" class = "notification success" [@slideInOut] >
+    {{message}}
+</div>

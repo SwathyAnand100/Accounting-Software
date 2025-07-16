@@ -1,0 +1,31 @@
+.topnav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 3px solid #ccc;
+}
+
+.logo-img {
+  height: 75px;
+  margin-right: 10px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  flex: 1;
+}
+
+.nav-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.icon {
+  font-size: 35px;
+  cursor: pointer;
+}

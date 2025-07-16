@@ -1,0 +1,59 @@
+<form (ngSubmit) = "OnSubmit()" #actionForm = "ngForm" class = "form-container">
+    <div class = "form-row">
+        <label for = "TranName"> Transaction Name : </label>
+        <input type = "text" id = "TranName" name = "TranName" [(ngModel)] = "tran.TranName">
+    </div>
+
+    <div class = "form-row">
+        <label for = "TranDesc">Transaction Description : </label>
+        <input type = "text" id = "TranDesc" name = "TranDesc" [(ngModel)] = "tran.TranDesc">
+    </div>
+
+    <div class = "form-row">
+        <label for = "TranDate">Date of Transaction: </label>
+        <input type = "date"  id = "TranDate" name = "TranDate" [(ngModel)] = "tran.TranDate">
+    </div>
+
+    <div class = "form-row">
+        <label for = "Amount">Dollars : </label>
+        <input type = "number" id = "Amount" name = "Amount" [(ngModel)] = "tran.Amount">
+    </div>
+
+    <div class="form-row">
+        <label for="AccName">Account Name:</label>
+        <input type="text" id="AccName" name="AccName" [(ngModel)]="tran.AccName" autocomplete="off" list = "accountsList">
+        <datalist id="accountsList">
+            <option *ngFor="let acc of accountList" [value]="acc"></option>
+        </datalist>
+    </div>
+
+    <div class="form-button">
+        <label>
+            <input type="radio" name="ActionPreferred" value="create" [(ngModel)]="ActionPreferred" checked>
+            Create 
+        </label>
+
+        <label>
+            <input type="radio" name="ActionPreferred" value="retrieve" [(ngModel)]="ActionPreferred">
+            Retrieve
+        </label>
+
+        <label>
+            <input type="radio" name="ActionPreferred" value="update" [(ngModel)]="ActionPreferred">
+            Update
+        </label>
+
+        <label>
+            <input type="radio" name="ActionPreferred" value="delete" [(ngModel)]="ActionPreferred">
+            Delete
+        </label>
+    </div><br>
+
+    <div class = "form-row">
+        <input type="submit" value="Submit">
+    </div>
+</form>
+
+<div *ngIf = "resp.messageType == 'success'" class = "notification success"[@slideInOut]>
+    {{resp.message}}
+</div>

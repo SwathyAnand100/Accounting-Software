@@ -1,0 +1,21 @@
+<!-- Account Master -->
+<div class="menu-wrapper" [ngClass]="{'open': openMenu === 'accounts'}">
+    <div class="menu-header" (click)="toggleMenu('accounts')">Account Master</div>
+    <div class="submenu">
+        <button [ngClass]="{'active-submenu-button': activePath === '/account/create'}" (click)="navigateTo('/account/create')">Create</button>
+        <button [ngClass]="{'active-submenu-button': activePath === '/account/retrieve'}" (click)="navigateTo('/account/retrieve')">Retrieve</button>
+        <button [ngClass]="{'active-submenu-button': activePath === '/account/update'}" (click)="navigateTo('/account/update')">Update</button>
+        <button [ngClass]="{'active-submenu-button': activePath === '/account/delete'}" (click)="navigateTo('/account/delete')">Delete</button>
+    </div>
+</div>
+
+<!-- Transactions -->
+<div class="menu-wrapper" [ngClass]="{'open': openMenu === 'transactions'}">
+    <div class="menu-header" (click)="toggleMenu('transactions')">Transactions</div>
+    <div class="submenu">
+        <button [ngClass]="{'active-submenu-button': activePath === '/transaction/create'}" (click)="navigateTo('/transaction/create')">Create</button>
+        <button [ngClass]="{'active-submenu-button': activePath === '/transaction/retrieve'}" (click)="navigateTo('/transaction/retrieve')">Retrieve</button>
+        <!-- <button [ngClass]="{'active-submenu-button': activePath === '/transaction/update'}" (click)="navigateTo('/transaction/update')">Update</button> -->
+        <!-- <button [ngClass]="{'active-submenu-button': activePath === '/transaction/delete'}" (click)="navigateTo('/transaction/delete')">Delete</button> -->
+    </div>
+</div>
